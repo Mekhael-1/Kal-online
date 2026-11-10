@@ -59,6 +59,7 @@ export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
   const [activeImage, setActiveImage] = useState<GalleryCard | null>(null);
 
   // Automatic slider state: 1 card displayed at a time, other 2 scrolling automatically
@@ -86,20 +87,24 @@ export default function Home() {
   return (
     <>
       {/* =========================================================================
-          1. TOP HERO SECTION WITH SINGLE VIDEO BACKGROUND
+          1. TOP HERO SECTION WITH CINEMATIC ATMOSPHERIC BACKGROUND
           ========================================================================= */}
       <section id="home" ref={heroRef} className={styles.heroSection}>
         <motion.div className={styles.videoWrap} style={{ y: videoY }}>
-          <video 
-            className={`${styles.videoBg} ${videoLoaded ? styles.videoOn : ''}`}
-            src="video.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            onCanPlay={() => setVideoLoaded(true)}
-          />
+          {!videoFailed && (
+            <video 
+              className={`${styles.videoBg} ${videoLoaded ? styles.videoOn : ''}`}
+              src={site.heroVideo}
+              poster={site.heroPoster || undefined}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              onCanPlay={() => setVideoLoaded(true)}
+              onError={() => setVideoFailed(true)}
+            />
+          )}
         </motion.div>
 
         {/* Cinematic dark fantasy gradient overlays */}
