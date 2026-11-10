@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    base: '/Kal-online/',
     server: {
       port: 5173,
       // Only proxy to the backend when you explicitly turn it on
