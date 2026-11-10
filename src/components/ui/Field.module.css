@@ -1,0 +1,15 @@
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+.field label { font-size: 0.9rem; font-weight: 500; color: var(--c-text); }
+.wrap {
+  display: flex; align-items: center;
+  background: rgba(11, 8, 7, 0.75);
+  border: 1px solid rgba(200, 150, 62, 0.28);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.wrap:focus-within { border-color: var(--c-gold-bright); box-shadow: var(--glow-gold); }
+.bad { border-color: #c4553a; }
+.wrap input { flex: 1; min-width: 0; padding: 0.85rem 1rem; background: none; border: 0; outline: none; color: var(--c-text); font: inherit; }
+.wrap input::placeholder { color: rgba(168, 149, 124, 0.55); }
+.toggle { padding: 0 1rem; background: none; border: 0; color: var(--c-gold); font-size: 0.85rem; font-weight: 600; }
+.toggle:hover { color: var(--c-gold-bright); }
+.err { overflow: hidden; font-size: 0.85rem; color: #e08a6f; }

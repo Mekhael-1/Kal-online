@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <!-- Subtle dark drop shadow -->
+  <path d="M4 3L13 25L16.5 17L24.5 14L4 3Z" fill="#000000" opacity="0.4" transform="translate(1.5, 2)" />
+  <!-- Sword blade & primary gauntlet pointer body -->
+  <path d="M4 3L13 25L16.8 16.8L25 13L4 3Z" fill="url(#blade_grad)" stroke="#1a120c" stroke-width="1.2" stroke-linejoin="round" />
+  <!-- Center sharp fuller / crease line -->
+  <path d="M4 3L16.8 16.8" stroke="#fff4cf" stroke-width="0.9" stroke-linecap="round" />
+  <!-- Inner shadow facet for metallic 3D feel -->
+  <path d="M4 3L16.8 16.8L13 25L4 3Z" fill="url(#facet_shadow)" />
+  <!-- Golden runic gem at center hilt -->
+  <circle cx="16.8" cy="16.8" r="2.2" fill="#ffd56b" stroke="#7a4805" stroke-width="0.8" />
+  <circle cx="16.4" cy="16.4" r="0.7" fill="#ffffff" />
+  <defs>
+    <linearGradient id="blade_grad" x1="4" y1="3" x2="22" y2="21" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fff9e6" />
+      <stop offset="45%" stop-color="#f0c46a" />
+      <stop offset="80%" stop-color="#c8963e" />
+      <stop offset="100%" stop-color="#734914" />
+    </linearGradient>
+    <linearGradient id="facet_shadow" x1="4" y1="3" x2="15" y2="21" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.45" />
+    </linearGradient>
+  </defs>
+</svg>
+

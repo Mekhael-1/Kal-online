@@ -1,0 +1,49 @@
+.btn {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2.5rem);
+  bottom: clamp(1.2rem, 3vw, 2.5rem);
+  z-index: 90;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(20, 16, 13, 0.92);
+  border: 1px solid rgba(200, 150, 62, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), var(--glow-gold);
+  color: var(--c-gold-bright);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  padding: 0;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  border-color: var(--c-gold-bright);
+  box-shadow: 0 0 25px rgba(240, 196, 106, 0.6);
+  color: #fff;
+}
+
+.progressRing {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+
+.ringBg {
+  stroke: rgba(90, 58, 36, 0.3);
+}
+
+.ringBar {
+  stroke: var(--c-gold-bright);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.arrow {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+

@@ -1,0 +1,718 @@
+/* Hero Section with Video Background */
+.heroSection {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 30%, var(--c-brown), var(--c-void) 75%);
+}
+
+.videoWrap {
+  position: absolute;
+  inset: -5% 0;
+  width: 100%;
+  height: 110%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.videoBg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: saturate(0.7) sepia(0.4) contrast(1.15);
+  transform: scale(1.04);
+  transition: opacity 1.5s ease, transform 6s var(--ease);
+}
+
+.videoOn {
+  opacity: 0.65;
+  transform: scale(1);
+}
+
+.videoTint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(42, 24, 16, 0.6) 0%,
+    rgba(11, 8, 7, 0.4) 50%,
+    rgba(11, 8, 7, 0.85) 100%
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.videoVignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(5, 3, 2, 0.9) 100%);
+  pointer-events: none;
+}
+
+.videoFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32%;
+  background: linear-gradient(180deg, transparent, var(--c-void));
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--maxw);
+  padding: calc(var(--nav-h) + 2.5rem) var(--gutter) 6rem;
+  text-align: center;
+}
+
+.heroStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 1.1rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--c-gold-bright);
+  background: rgba(20, 16, 13, 0.8);
+  border: 1px solid rgba(200, 150, 62, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 12px rgba(200, 150, 62, 0.12);
+  border-radius: 999px;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38d39f;
+  box-shadow: 0 0 10px #38d39f;
+  animation: radar 1.8s ease-in-out infinite;
+}
+
+@keyframes radar {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.4; }
+}
+
+.heroTitle {
+  font-size: clamp(3.2rem, 11vw, 8.5rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+}
+
+.titleGlow {
+  display: inline-block;
+  background: linear-gradient(180deg, #fff1c9 0%, var(--c-gold-bright) 35%, var(--c-gold) 65%, #7a5218 100%);
+  background-size: 100% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 24px rgba(200, 150, 62, 0.5)) drop-shadow(0 6px 18px rgba(0, 0, 0, 0.9));
+  animation: forge 6s ease-in-out infinite alternate;
+}
+
+@keyframes forge {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+.heroRule {
+  display: block;
+  width: min(440px, 75%);
+  height: 1px;
+  margin: 1.4rem 0 1.6rem;
+  background: var(--line-gold);
+  box-shadow: 0 0 16px var(--c-gold);
+}
+
+.heroTagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.8vw, 1.8rem);
+  color: var(--c-text);
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+.heroDesc {
+  max-width: 58ch;
+  margin-top: 1rem;
+  color: var(--c-text-dim);
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  line-height: 1.7;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+.heroHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-top: 2.4rem;
+  font-size: 0.9rem;
+  color: var(--c-text-dim);
+}
+
+.highlightItem {
+  color: var(--c-text);
+  font-weight: 500;
+}
+
+.highlightDot {
+  color: var(--c-gold);
+  opacity: 0.6;
+}
+
+.scrollIndicator {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 2rem;
+  width: 26px;
+  height: 44px;
+  margin-left: -13px;
+  border: 1.5px solid rgba(200, 150, 62, 0.65);
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.scrollDot {
+  width: 4px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--c-gold-bright);
+  box-shadow: 0 0 8px var(--c-gold);
+}
+
+/* =========================================================================
+   GALLERY SECTION (Castle War Video + 3-Card Carousel)
+   ========================================================================= */
+.imagesSection {
+  position: relative;
+  padding: 4.5rem 0 5.5rem;
+  background: radial-gradient(ellipse at 50% 0%, rgba(42, 24, 16, 0.55), transparent 75%);
+  border-top: 1px solid rgba(200, 150, 62, 0.22);
+}
+
+.imagesHead {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+.imagesKicker {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--c-ember);
+  margin-bottom: 0.5rem;
+}
+
+.imagesTitle {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8rem;
+}
+
+.imagesSubtitle {
+  color: var(--c-text-dim);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* 1. Dedicated Full-Width Castle War Video Section */
+.castleWarSection {
+  margin-bottom: 4.5rem;
+}
+
+.castleWarHeader {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 1.8rem;
+}
+
+.warBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.28rem 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-gold-bright);
+  background: rgba(224, 112, 42, 0.18);
+  border: 1px solid rgba(224, 112, 42, 0.45);
+  border-radius: 2px;
+  margin-bottom: 0.6rem;
+}
+
+.castleWarTitle {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.castleWarSubtitle {
+  color: var(--c-text-dim);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Dark Fantasy Border Frame for the Video */
+.castleWarVideoFrame {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  max-height: 560px;
+  background: #080605;
+  border: 1px solid rgba(240, 196, 106, 0.55);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9), var(--glow-gold);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* Ornate Corner Accents */
+.frameCornerTL,
+.frameCornerTR,
+.frameCornerBL,
+.frameCornerBR {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.frameCornerTL {
+  top: 6px;
+  left: 6px;
+  border-top: 2.5px solid var(--c-gold-bright);
+  border-left: 2.5px solid var(--c-gold-bright);
+  filter: drop-shadow(0 0 6px var(--c-gold));
+}
+
+.frameCornerTR {
+  top: 6px;
+  right: 6px;
+  border-top: 2.5px solid var(--c-gold-bright);
+  border-right: 2.5px solid var(--c-gold-bright);
+  filter: drop-shadow(0 0 6px var(--c-gold));
+}
+
+.frameCornerBL {
+  bottom: 6px;
+  left: 6px;
+  border-bottom: 2.5px solid var(--c-gold-bright);
+  border-left: 2.5px solid var(--c-gold-bright);
+  filter: drop-shadow(0 0 6px var(--c-gold));
+}
+
+.frameCornerBR {
+  bottom: 6px;
+  right: 6px;
+  border-bottom: 2.5px solid var(--c-gold-bright);
+  border-right: 2.5px solid var(--c-gold-bright);
+  filter: drop-shadow(0 0 6px var(--c-gold));
+}
+
+.castleWarVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.1) brightness(0.92);
+}
+
+.castleWarVideoOverlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.5rem 1.8rem;
+  background: linear-gradient(180deg, transparent, rgba(11, 8, 7, 0.92) 80%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.liveSiegeTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--c-gold-bright);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.06em;
+}
+
+.siegeIcon {
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 6px rgba(240, 196, 106, 0.5));
+}
+
+/* =========================================================================
+   2. AUTOMATIC 3-CARD CAROUSEL (1 CARD VISIBLE AT A TIME + 2 AUTO SCROLLING)
+   ========================================================================= */
+.carouselSection {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.carouselSectionHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.carouselSectionHead h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.carouselSectionHead p {
+  color: var(--c-text-dim);
+  font-size: 0.95rem;
+}
+
+.carouselNav {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.carouselNavBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 2px;
+  background: rgba(20, 16, 13, 0.85);
+  border: 1px solid rgba(200, 150, 62, 0.4);
+  color: var(--c-gold-bright);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.carouselNavBtn:hover {
+  background: var(--c-gold);
+  color: var(--c-void);
+  border-color: var(--c-gold-bright);
+  box-shadow: var(--glow-gold);
+}
+
+/* The viewport showing 1 card at a time with ornate frame */
+.carouselViewport {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgba(240, 196, 106, 0.5);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.85), var(--glow-gold);
+  background: #080605;
+}
+
+.carouselTrack {
+  display: flex;
+  width: 100%;
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* 1 single card fills the screen width of the slider (100% width) */
+.carouselCard {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  height: 460px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--c-ink);
+}
+
+.cardMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease), filter 0.4s;
+  filter: brightness(0.85) contrast(1.15);
+}
+
+.carouselCard:hover .cardMedia {
+  transform: scale(1.05);
+  filter: brightness(0.98) contrast(1.2);
+}
+
+.counterBadge {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 3;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--c-gold-bright);
+  padding: 0.3rem 0.9rem;
+  background: rgba(11, 8, 7, 0.8);
+  border: 1px solid rgba(200, 150, 62, 0.4);
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(4px);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 8, 7, 0.08) 0%,
+    rgba(11, 8, 7, 0.5) 45%,
+    rgba(11, 8, 7, 0.94) 85%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  pointer-events: none;
+}
+
+.imageBadge {
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-gold-bright);
+  background: rgba(20, 16, 13, 0.85);
+  border: 1px solid rgba(200, 150, 62, 0.45);
+  border-radius: 2px;
+  margin-bottom: 0.6rem;
+}
+
+.imageTitle {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  color: #fff;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
+}
+
+.cardDesc {
+  color: var(--c-text-dim);
+  font-size: 1rem;
+  max-width: 60ch;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.imagePrompt {
+  font-size: 0.85rem;
+  color: var(--c-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s, gap 0.2s;
+}
+
+.carouselCard:hover .imagePrompt {
+  color: #fff;
+  gap: 0.6rem;
+}
+
+/* 3 Interactive Slider Tabs Below the Card */
+.sliderTabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tabItem {
+  position: relative;
+  overflow: hidden;
+  padding: 1.1rem 1.3rem;
+  background: rgba(20, 16, 13, 0.85);
+  border: 1px solid rgba(200, 150, 62, 0.25);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.tabItem:hover {
+  border-color: rgba(240, 196, 106, 0.6);
+  background: rgba(42, 24, 16, 0.6);
+}
+
+.activeTabItem {
+  border-color: var(--c-gold-bright);
+  background: rgba(61, 36, 23, 0.75);
+  box-shadow: 0 0 18px rgba(200, 150, 62, 0.35);
+}
+
+.tabNumber {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--c-gold);
+}
+
+.activeTabItem .tabNumber {
+  color: var(--c-gold-bright);
+  text-shadow: 0 0 10px var(--c-gold);
+}
+
+.tabInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  overflow: hidden;
+}
+
+.tabCategory {
+  font-size: 0.72rem;
+  color: var(--c-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tabTitle {
+  font-size: 0.95rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tabProgress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--c-gold-bright), var(--c-ember));
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: rgba(5, 3, 2, 0.88);
+  backdrop-filter: blur(12px);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.lightboxContent {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  background: linear-gradient(160deg, rgba(61, 36, 23, 0.95), rgba(20, 16, 13, 0.98));
+  border: 1px solid var(--c-gold-bright);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), var(--glow-gold);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lightboxImg {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border: 1px solid rgba(200, 150, 62, 0.3);
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: rgba(11, 8, 7, 0.8);
+  border: 1px solid rgba(200, 150, 62, 0.4);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--c-text-dim);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  z-index: 2;
+}
+
+.lightboxClose:hover {
+  color: #fff;
+  border-color: var(--c-gold-bright);
+}
+
+.lightboxMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0 0.5rem 0.5rem;
+}
+
+.lightboxTitle {
+  font-size: 1.5rem;
+  color: var(--c-gold-bright);
+}
+
+.lightboxDesc {
+  color: var(--c-text);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .sliderTabs {
+    grid-template-columns: 1fr;
+  }
+  .carouselCard {
+    height: 360px;
+  }
+}

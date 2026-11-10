@@ -1,0 +1,31 @@
+:root {
+  /* Surfaces: charcoal to chocolate */
+  --c-void: #0b0807;
+  --c-ink: #14100d;
+  --c-chocolate: #2a1810;
+  --c-brown: #3d2417;
+  --c-umber: #5a3a24;
+
+  /* Accents */
+  --c-gold: #c8963e;
+  --c-gold-bright: #f0c46a;
+  --c-ember: #e0702a;
+
+  /* Text */
+  --c-text: #e8dccb;
+  --c-text-dim: #a8957c;
+
+  /* Effects */
+  --glow-gold: 0 0 18px rgba(200, 150, 62, 0.45), 0 0 48px rgba(200, 150, 62, 0.18);
+  --line-gold: linear-gradient(90deg, transparent, var(--c-gold), transparent);
+
+  /* Type */
+  --font-display: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --nav-h: 76px;
+  --maxw: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

@@ -1,0 +1,492 @@
+.downloadPage {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.mirrorsSection {
+  padding-top: 1.5rem;
+}
+
+.infoSection {
+  padding-bottom: 2rem;
+}
+
+.toolsSection {
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+.mirrors {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+  padding: 2rem;
+  background: linear-gradient(160deg, rgba(61, 36, 23, 0.45), rgba(20, 16, 13, 0.95));
+  border: 1px solid rgba(200, 150, 62, 0.22);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(240, 196, 106, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), var(--glow-gold);
+}
+
+.cardTop {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.mirrorName {
+  font-size: 1.45rem;
+  color: var(--c-gold-bright);
+}
+
+.mirrorSub {
+  font-size: 0.75rem;
+  color: var(--c-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.note {
+  color: var(--c-text-dim);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.dlBtn {
+  width: 100%;
+}
+
+.hashBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 1.2rem 1.6rem;
+  background: rgba(11, 8, 7, 0.85);
+  border: 1px dashed rgba(200, 150, 62, 0.35);
+  margin-top: 1rem;
+}
+
+.hashLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hashLabel {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  color: var(--c-gold);
+  letter-spacing: 0.05em;
+}
+
+.hashCode {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--c-text-dim);
+  word-break: break-all;
+}
+
+.copyBtn {
+  padding: 0.55rem 1.2rem;
+  background: rgba(200, 150, 62, 0.15);
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold-bright);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.copyBtn:hover {
+  background: var(--c-gold);
+  color: var(--c-void);
+  box-shadow: var(--glow-gold);
+}
+
+/* Steps and Requirements Layout */
+.split {
+  display: grid;
+  gap: 3.5rem;
+  grid-template-columns: 1fr;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.6rem;
+  color: var(--c-text);
+}
+
+.steps {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(180deg, var(--c-gold), transparent);
+}
+
+.steps li {
+  position: relative;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.num {
+  flex: none;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--c-gold-bright);
+  background: var(--c-chocolate);
+  border: 1px solid var(--c-gold);
+  box-shadow: var(--glow-gold);
+}
+
+.stepTitle {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.stepText {
+  color: var(--c-text-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.tableWrap {
+  padding: 0.5rem 1rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.table th,
+.table td {
+  padding: 0.85rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(90, 58, 36, 0.45);
+}
+
+.table thead th {
+  font-family: var(--font-display);
+  color: var(--c-gold-bright);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+.table tbody th {
+  color: var(--c-text);
+  font-weight: 500;
+}
+
+.table td {
+  color: var(--c-text-dim);
+}
+
+.table tr:last-child th,
+.table tr:last-child td {
+  border-bottom: 0;
+}
+
+/* =========================================================
+   SLEEK SOFTWARE LIST (NAME ON LEFT, DOWNLOAD BUTTON ON RIGHT)
+   ========================================================= */
+.sectionHeader {
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+.sectionKicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--c-gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  font-size: 0.96rem;
+  color: var(--c-text-dim);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.programsPanel {
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(200, 150, 62, 0.25);
+  background: rgba(15, 11, 9, 0.85);
+  margin-bottom: 2.5rem;
+}
+
+.programsTableHead {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 160px;
+  padding: 1rem 1.4rem;
+  background: rgba(42, 24, 16, 0.7);
+  border-bottom: 1px solid rgba(200, 150, 62, 0.25);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--c-gold-bright);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.headAction {
+  text-align: right;
+}
+
+.programsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.programRow {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 160px;
+  align-items: center;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid rgba(90, 58, 36, 0.3);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.programRow:last-child {
+  border-bottom: none;
+}
+
+.programRow:hover {
+  background: rgba(61, 36, 23, 0.35);
+}
+
+.progNameCol {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.progIcon {
+  color: var(--c-gold);
+  flex: none;
+}
+
+.progName {
+  font-size: 0.95rem;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.progTagCol {
+  display: flex;
+  align-items: center;
+}
+
+.progTag {
+  font-size: 0.82rem;
+  color: var(--c-text-dim);
+  background: rgba(20, 16, 13, 0.6);
+  padding: 0.3rem 0.65rem;
+  border-left: 2px solid var(--c-gold);
+}
+
+.progBtnCol {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rowBtnPrimary,
+.rowBtnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  border-radius: 2px;
+}
+
+.rowBtnPrimary {
+  background: linear-gradient(180deg, var(--c-gold-bright), var(--c-gold));
+  color: var(--c-void);
+  border: 1px solid var(--c-gold-bright);
+  box-shadow: 0 2px 10px rgba(200, 150, 62, 0.2);
+}
+
+.rowBtnPrimary:hover {
+  background: #fff;
+  color: var(--c-void);
+  box-shadow: var(--glow-gold);
+  transform: translateY(-1px);
+}
+
+.rowBtnGhost {
+  background: rgba(42, 24, 16, 0.5);
+  color: var(--c-gold-bright);
+  border: 1px solid rgba(200, 150, 62, 0.35);
+}
+
+.rowBtnGhost:hover {
+  background: rgba(90, 58, 36, 0.65);
+  color: #fff;
+  border-color: var(--c-gold);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   DISCORD 24/7 SUPPORT BANNER (قائمة المساعدة على ديسكورد)
+   ========================================================= */
+.discordCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.8rem;
+  padding: 2rem 2.4rem;
+  background: linear-gradient(135deg, rgba(88, 101, 242, 0.14), rgba(20, 16, 13, 0.95));
+  border: 1px solid rgba(88, 101, 242, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.discordLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  flex: 1;
+  min-width: 280px;
+}
+
+.discordIconBox {
+  flex: none;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  background: rgba(88, 101, 242, 0.25);
+  border: 1px solid rgba(88, 101, 242, 0.6);
+  border-radius: 8px;
+  color: #7289da;
+}
+
+.discordTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.discordSubtitle {
+  font-size: 0.92rem;
+  color: var(--c-text-dim);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.discordBtn {
+  flex: none;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+@media (min-width: 960px) {
+  .split {
+    grid-template-columns: 1.15fr 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .programsTableHead {
+    display: none;
+  }
+
+  .programRow {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    padding: 1.2rem;
+  }
+
+  .progBtnCol {
+    justify-content: flex-start;
+  }
+
+  .rowBtnPrimary,
+  .rowBtnGhost {
+    width: 100%;
+  }
+
+  .discordCard {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .discordLeft {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .discordBtn {
+    width: 100%;
+  }
+}

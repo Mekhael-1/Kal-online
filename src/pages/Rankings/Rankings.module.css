@@ -1,0 +1,308 @@
+.pageContainer {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  padding-bottom: 3.5rem;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.subBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.countBadge {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--c-gold);
+  padding: 0.35rem 0.8rem;
+  background: rgba(200, 150, 62, 0.1);
+  border: 1px solid rgba(200, 150, 62, 0.25);
+  border-radius: 2px;
+}
+
+.search {
+  flex: 1 1 260px;
+  max-width: 380px;
+  padding: 0.8rem 1rem;
+  color: var(--c-text);
+  font: inherit;
+  outline: none;
+  background: rgba(11, 8, 7, 0.85);
+  border: 1px solid rgba(200, 150, 62, 0.28);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search:focus {
+  border-color: var(--c-gold-bright);
+  box-shadow: var(--glow-gold);
+}
+
+.search::placeholder {
+  color: rgba(168, 149, 124, 0.55);
+}
+
+.podium {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 2.5rem;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.3rem;
+  padding: 1.6rem 0.8rem 1.6rem;
+}
+
+.p1 {
+  padding-bottom: 2.8rem;
+  border-color: var(--c-gold-bright);
+  box-shadow: var(--glow-gold);
+  background: linear-gradient(180deg, rgba(70, 42, 22, 0.7), rgba(20, 16, 13, 0.95));
+}
+
+.p2 {
+  padding-bottom: 2rem;
+  border-color: rgba(208, 212, 220, 0.4);
+}
+
+.p3 {
+  border-color: rgba(205, 127, 50, 0.4);
+}
+
+.crown {
+  position: absolute;
+  top: -12px;
+  filter: drop-shadow(0 0 8px rgba(240, 196, 106, 0.7));
+}
+
+.place {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--c-gold);
+}
+
+.p1 .place {
+  font-size: 2rem;
+  color: var(--c-gold-bright);
+  text-shadow: 0 0 16px var(--c-gold);
+}
+
+.champName {
+  font-size: 1.15rem;
+  margin-top: 0.4rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.meta {
+  font-size: 0.82rem;
+  color: var(--c-text-dim);
+}
+
+.metaLabel {
+  font-size: 0.75rem;
+  color: var(--c-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.score {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.7rem;
+  margin-top: 0.2rem;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  border: 2px solid;
+  border-radius: 50%;
+  background: var(--c-chocolate);
+  flex: none;
+  transition: transform 0.3s ease;
+}
+
+.step:hover .avatar {
+  transform: scale(1.08);
+}
+
+.guildIcon {
+  font-size: 2.8rem;
+  margin-top: 0.2rem;
+  filter: drop-shadow(0 0 10px rgba(240, 196, 106, 0.4));
+}
+
+.guildBadgeIcon {
+  font-size: 1.4rem;
+  filter: drop-shadow(0 0 6px rgba(200, 150, 62, 0.4));
+}
+
+.guildLv {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--c-gold);
+}
+
+.territoryTag {
+  display: inline-block;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid;
+  border-radius: 2px;
+  background: rgba(11, 8, 7, 0.7);
+}
+
+.scoreCol {
+  color: var(--c-gold-bright);
+  font-weight: 700;
+}
+
+.tableWrap {
+  padding: 0.4rem 0.8rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  padding: 0.85rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(90, 58, 36, 0.45);
+}
+
+.table thead th {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--c-gold-bright);
+  text-transform: uppercase;
+}
+
+.table tbody tr {
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.table tbody tr:hover {
+  background: rgba(200, 150, 62, 0.08);
+}
+
+.topRow {
+  background: rgba(200, 150, 62, 0.04);
+}
+
+.num {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.rank {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--c-gold-bright);
+  width: 4.5rem;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+}
+
+.warriorName {
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.guildName {
+  color: var(--c-text-dim);
+  font-size: 0.9rem;
+}
+
+.classTag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.levelBadge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--c-gold);
+}
+
+.pvpCol {
+  color: #ff9d66;
+  font-weight: 600;
+}
+
+.empty {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--c-text-dim);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resetBtn {
+  padding: 0.5rem 1.2rem;
+  background: rgba(200, 150, 62, 0.15);
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold-bright);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.resetBtn:hover {
+  background: var(--c-gold);
+  color: var(--c-void);
+  box-shadow: var(--glow-gold);
+}
+
+@media (max-width: 680px) {
+  .podium {
+    grid-template-columns: 1fr;
+  }
+  .p1 {
+    order: -1;
+  }
+}

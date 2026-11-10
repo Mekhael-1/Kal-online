@@ -1,0 +1,7 @@
+.stats { position: relative; z-index: 3; margin-top: -1.5rem; padding-bottom: 2rem; }
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.box { text-align: center; padding: 2rem 1rem; }
+.value { display: inline-block; font-family: var(--font-display); font-weight: 900; font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.1; }
+.label { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.5rem; color: var(--c-text-dim); font-size: 0.95rem; }
+.pulse { width: 9px; height: 9px; border-radius: 50%; background: #6fcf6a; box-shadow: 0 0 0 0 rgba(111, 207, 106, 0.7); animation: ping 1.8s ease-out infinite; }
+@keyframes ping { to { box-shadow: 0 0 0 12px rgba(111, 207, 106, 0); } }

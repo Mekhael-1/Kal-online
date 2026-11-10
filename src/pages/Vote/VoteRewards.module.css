@@ -1,0 +1,653 @@
+.votePage {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.mainSection {
+  padding-top: 1.5rem;
+  padding-bottom: 5rem;
+}
+
+/* Account Auth Panel */
+.accountAuthPanel {
+  padding: 2rem 2.2rem;
+  background: rgba(15, 11, 9, 0.9);
+  border: 1px solid rgba(200, 150, 62, 0.3);
+  margin-bottom: 2.5rem;
+}
+
+.authHead {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(200, 150, 62, 0.2);
+}
+
+.authBadge {
+  padding: 0.35rem 0.85rem;
+  background: var(--c-chocolate);
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold-bright);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+}
+
+.authTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.authSubtitle {
+  font-size: 0.9rem;
+  color: var(--c-text-dim);
+  margin: 0;
+}
+
+.authInputsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.authInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.inputLabel {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--c-gold-bright);
+}
+
+.authTextInput {
+  padding: 0.85rem 1rem;
+  background: rgba(20, 16, 13, 0.7);
+  border: 1px solid rgba(200, 150, 62, 0.35);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.authTextInput:focus {
+  border-color: var(--c-gold-bright);
+  box-shadow: 0 0 12px rgba(240, 196, 106, 0.25);
+}
+
+.inputHint {
+  font-size: 0.78rem;
+  color: var(--c-text-dim);
+}
+
+.authAlert {
+  padding: 0.75rem 1.2rem;
+  background: rgba(224, 112, 42, 0.15);
+  border-left: 3px solid var(--c-ember);
+  color: #ff9b53;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+.activePlayerPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 1.1rem;
+  background: rgba(85, 230, 158, 0.12);
+  border: 1px solid rgba(85, 230, 158, 0.4);
+  color: #55e69e;
+  font-size: 0.88rem;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #55e69e;
+  box-shadow: 0 0 8px #55e69e;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Claim Notification */
+.claimNotification {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  background: linear-gradient(90deg, rgba(85, 230, 158, 0.2), rgba(20, 16, 13, 0.9));
+  border: 1px solid #55e69e;
+  color: #fff;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 24px rgba(85, 230, 158, 0.3);
+}
+
+.claimIcon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.claimText {
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   TOP-KAL VOTING CARD (https://top-kal.com/)
+   ========================================================= */
+.topKalCard {
+  padding: 2.2rem;
+  background: linear-gradient(155deg, rgba(42, 24, 16, 0.65), rgba(11, 8, 7, 0.98));
+  border: 1px solid rgba(200, 150, 62, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), var(--glow-gold);
+  margin-bottom: 3.5rem;
+}
+
+.topKalTop {
+  margin-bottom: 1.8rem;
+}
+
+.topKalBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  background: rgba(224, 112, 42, 0.2);
+  border: 1px solid var(--c-ember);
+  color: #ffaa70;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.livePulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-ember);
+  box-shadow: 0 0 8px var(--c-ember);
+}
+
+.topKalTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.topKalDesc {
+  font-size: 0.96rem;
+  color: var(--c-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.topKalDesc strong {
+  color: var(--c-gold-bright);
+}
+
+/* Action Row */
+.topKalActionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(200, 150, 62, 0.25);
+  flex-wrap: wrap;
+}
+
+.cooldownBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--c-text);
+}
+
+.clockIcon {
+  font-size: 1.2rem;
+}
+
+.topKalVoteBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2.2rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: linear-gradient(180deg, var(--c-gold-bright), var(--c-gold));
+  color: var(--c-void);
+  border: 1px solid var(--c-gold-bright);
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(200, 150, 62, 0.35);
+  transition: all 0.22s;
+  cursor: pointer;
+}
+
+.topKalVoteBtn:hover {
+  background: #fff;
+  color: var(--c-void);
+  box-shadow: var(--glow-gold);
+  transform: translateY(-2px);
+}
+
+.topKalVoteBtnDone {
+  background: rgba(85, 230, 158, 0.2);
+  border-color: #55e69e;
+  color: #55e69e;
+  box-shadow: none;
+  cursor: default;
+}
+
+.voteBtnContent {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* =========================================================
+   RATING SECTION (RATE THE GAME)
+   ========================================================= */
+.ratingSection {
+  padding: 2.2rem;
+  background: rgba(15, 11, 9, 0.9);
+  border: 1px solid rgba(200, 150, 62, 0.3);
+  margin-bottom: 3.5rem;
+}
+
+.ratingHead {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(200, 150, 62, 0.2);
+}
+
+.ratingBadge {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  background: rgba(224, 112, 42, 0.2);
+  border: 1px solid var(--c-ember);
+  color: #ffb580;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.ratingTitle {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.ratingSubtitle {
+  font-size: 0.94rem;
+  color: var(--c-text-dim);
+  margin: 0;
+}
+
+.ratingSubtitle strong {
+  color: var(--c-gold-bright);
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.starRatingRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.starPrompt {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--c-gold-bright);
+}
+
+.starsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.starBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s;
+}
+
+.starBtn:hover {
+  transform: scale(1.2);
+}
+
+.starGlyph {
+  font-size: 2.2rem;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.ratingScoreLabel {
+  margin-left: 0.8rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--c-gold-bright);
+}
+
+.reviewTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.reviewTextarea {
+  padding: 0.9rem 1.1rem;
+  background: rgba(20, 16, 13, 0.7);
+  border: 1px solid rgba(200, 150, 62, 0.35);
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.reviewTextarea:focus {
+  border-color: var(--c-gold-bright);
+  box-shadow: 0 0 12px rgba(240, 196, 106, 0.25);
+}
+
+.reviewSubmitRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+}
+
+.rewardNote {
+  font-size: 0.88rem;
+  color: #55e69e;
+}
+
+.submitReviewBtn {
+  min-width: 280px;
+}
+
+.reviewSuccessBox {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.successCheck {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(85, 230, 158, 0.2);
+  border: 2px solid #55e69e;
+  color: #55e69e;
+  font-size: 1.6rem;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1rem;
+}
+
+.reviewSuccessBox h4 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.reviewSuccessBox p {
+  color: var(--c-text-dim);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+}
+
+.writeAnotherBtn {
+  padding: 0.6rem 1.4rem;
+  background: rgba(200, 150, 62, 0.15);
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold-bright);
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+
+/* =========================================================
+   REVIEWS FEED SHOWCASE
+   ========================================================= */
+.reviewsFeedSection {
+  margin-bottom: 3.5rem;
+}
+
+.feedHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.overallRatingBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.overallBigScore {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--c-gold-bright);
+  line-height: 1;
+}
+
+.overallStars {
+  color: var(--c-gold-bright);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+.overallCount {
+  font-size: 0.8rem;
+  color: var(--c-text-dim);
+}
+
+.feedTitle {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: #fff;
+  margin: 0;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.4rem;
+}
+
+.reviewCard {
+  padding: 1.4rem;
+  background: rgba(20, 16, 13, 0.65);
+  border: 1px solid rgba(200, 150, 62, 0.2);
+}
+
+.reviewCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.85rem;
+}
+
+.revAuthor {
+  display: block;
+  font-size: 0.95rem;
+  color: #fff;
+  font-family: var(--font-display);
+}
+
+.revClass {
+  font-size: 0.75rem;
+  color: var(--c-gold);
+}
+
+.revStars {
+  color: var(--c-gold-bright);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.revDate {
+  font-size: 0.7rem;
+  color: var(--c-text-dim);
+  margin-top: 0.15rem;
+}
+
+.revComment {
+  font-size: 0.88rem;
+  color: var(--c-text-dim);
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
+}
+
+/* =========================================================
+   STREAK PANEL
+   ========================================================= */
+.streakPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.8rem 2.2rem;
+  background: linear-gradient(135deg, rgba(224, 112, 42, 0.12), rgba(20, 16, 13, 0.9));
+  border: 1px solid rgba(224, 112, 42, 0.35);
+  flex-wrap: wrap;
+}
+
+.streakLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex: 1;
+  min-width: 280px;
+}
+
+.streakIcon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.streakTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.streakDesc {
+  font-size: 0.88rem;
+  color: var(--c-text-dim);
+  margin: 0;
+}
+
+.streakDays {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.streakPill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  background: rgba(20, 16, 13, 0.6);
+  border: 1px solid rgba(200, 150, 62, 0.2);
+  font-size: 0.75rem;
+  color: var(--c-text-dim);
+  min-width: 65px;
+}
+
+.streakPill strong {
+  font-size: 0.8rem;
+  color: var(--c-gold-bright);
+}
+
+.streakPillActive {
+  background: rgba(224, 112, 42, 0.2);
+  border-color: var(--c-ember);
+  color: #fff;
+}
+
+.streakPillActive strong {
+  color: #ffaa70;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 768px) {
+  .authInputsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .topKalActionRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topKalVoteBtn {
+    width: 100%;
+  }
+
+  .reviewSubmitRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .submitReviewBtn {
+    width: 100%;
+  }
+
+  .streakPanel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

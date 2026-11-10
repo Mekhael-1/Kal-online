@@ -1,0 +1,329 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  width: 100%;
+  transition: background 0.45s var(--ease), box-shadow 0.45s var(--ease), backdrop-filter 0.45s;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--line-gold);
+  opacity: 0;
+  transition: opacity 0.45s;
+}
+
+.solid {
+  background: rgba(13, 9, 7, 0.92);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
+}
+
+.solid::after {
+  opacity: 0.85;
+}
+
+.nav {
+  max-width: var(--maxw);
+  height: var(--nav-h);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+/* =========================================================
+   BRAND LOGO & NAME (FIXED ON THE LEFT)
+   ========================================================= */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.brandText {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  color: var(--c-gold-bright);
+  text-shadow: 0 0 14px rgba(200, 150, 62, 0.35);
+  white-space: nowrap;
+}
+
+.serverPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #38d39f;
+  background: rgba(56, 211, 159, 0.12);
+  border: 1px solid rgba(56, 211, 159, 0.35);
+  border-radius: 999px;
+  margin-left: 0.2rem;
+  flex-shrink: 0;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38d39f;
+  box-shadow: 0 0 8px #38d39f;
+  animation: navPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes navPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+/* =========================================================
+   CENTERED NAVIGATION LINKS (NEVER WRAP, PERFECTLY BALANCED)
+   ========================================================= */
+.links {
+  display: none;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.links li {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  padding: 0.45rem 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  color: var(--c-text-dim);
+  white-space: nowrap;
+  transition: color 0.25s, text-shadow 0.25s;
+}
+
+.link:hover,
+.link.active {
+  color: var(--c-gold-bright);
+  text-shadow: 0 0 12px rgba(240, 196, 106, 0.5);
+}
+
+.underline {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--c-gold-bright), transparent);
+  box-shadow: 0 0 10px var(--c-gold);
+}
+
+/* =========================================================
+   RIGHT ACTIONS (DISCORD, LOGIN, REGISTER) - FULLY VISIBLE
+   ========================================================= */
+.actions {
+  display: none;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.discord {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.48rem 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--c-text-dim);
+  white-space: nowrap;
+  transition: color 0.3s, filter 0.3s;
+}
+
+.discord:hover {
+  color: var(--c-gold-bright);
+  filter: drop-shadow(0 0 8px rgba(240, 196, 106, 0.6));
+}
+
+/* LOGIN BUTTON */
+.loginBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(160deg, rgba(42, 24, 16, 0.65), rgba(15, 11, 9, 0.92));
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold-bright);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  text-decoration: none;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), inset 0 0 8px rgba(200, 150, 62, 0.15);
+  transition: all 0.3s var(--ease);
+}
+
+.loginText {
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 1;
+}
+
+.loginBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-25deg);
+  transition: transform 0.65s var(--ease);
+}
+
+.loginBtn:hover::before {
+  transform: translateX(350%) skewX(-25deg);
+}
+
+.loginBtn:hover {
+  background: linear-gradient(160deg, rgba(61, 36, 23, 0.9), rgba(25, 17, 12, 0.98));
+  border-color: var(--c-gold-bright);
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(240, 196, 106, 0.5), inset 0 0 12px rgba(240, 196, 106, 0.3);
+  transform: translateY(-2px);
+}
+
+.loginBtn:active {
+  transform: translateY(0);
+}
+
+/* REGISTER BUTTON (PERFECTLY VISIBLE ON SCREEN) */
+.register {
+  padding: 0.52rem 1.15rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--c-void);
+  background: linear-gradient(180deg, var(--c-gold-bright), var(--c-gold));
+  border: 1px solid var(--c-gold-bright);
+  box-shadow: 0 2px 10px rgba(200, 150, 62, 0.3);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.register:hover {
+  background: #ffffff;
+  color: var(--c-void);
+  box-shadow: var(--glow-gold);
+  transform: translateY(-2px);
+}
+
+/* BURGER ICON FOR MOBILE/TABLET */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: 0;
+  margin-left: auto;
+}
+
+.bar {
+  display: block;
+  height: 2px;
+  background: var(--c-gold-bright);
+  transition: transform 0.35s var(--ease), opacity 0.2s;
+}
+
+.b1 { transform: translateY(8px) rotate(45deg); }
+.b2 { opacity: 0; }
+.b3 { transform: translateY(-8px) rotate(-45deg); }
+
+/* MOBILE DRAWER */
+.drawer {
+  overflow: hidden;
+  border-top: 1px solid rgba(200, 150, 62, 0.25);
+  background: rgba(13, 9, 7, 0.98);
+}
+
+.drawer ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem var(--gutter) 0.4rem;
+}
+
+.drawer li a {
+  display: block;
+  padding: 0.85rem 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: var(--c-text);
+  border-bottom: 1px solid rgba(90, 58, 36, 0.5);
+  white-space: nowrap;
+}
+
+.drawer li a:hover,
+.drawer li a.mActive {
+  color: var(--c-gold-bright);
+}
+
+.drawerAuth {
+  display: flex;
+  gap: 0.8rem;
+  padding: 1rem var(--gutter) 1.6rem;
+}
+
+.drawerAuth .loginBtn,
+.drawerAuth .register {
+  flex: 1;
+  text-align: center;
+}
+
+/* =========================================================
+   BREAKPOINTS: SHOW FULL DESKTOP NAV AT 1024PX+
+   ========================================================= */
+@media (min-width: 1024px) {
+  .links {
+    display: flex;
+  }
+  .actions {
+    display: flex;
+  }
+  .burger,
+  .drawer {
+    display: none;
+  }
+}

@@ -1,0 +1,243 @@
+.section {
+  position: relative;
+}
+
+.head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.kicker {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--c-gold);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8rem;
+}
+
+.subtitle {
+  color: var(--c-text-dim);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.tabBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.2rem;
+}
+
+.tabBtn {
+  position: relative;
+  background: rgba(20, 16, 13, 0.85);
+  border: 1px solid rgba(200, 150, 62, 0.25);
+  padding: 0.8rem 1.8rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  color: var(--c-text-dim);
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.tabBtn:hover {
+  color: #fff;
+  border-color: rgba(240, 196, 106, 0.6);
+}
+
+.activeTab {
+  color: #fff;
+}
+
+.tabHighlight {
+  position: absolute;
+  inset: 0;
+  border: 1px solid;
+  box-shadow: 0 0 16px rgba(200, 150, 62, 0.2);
+}
+
+.tabLabel {
+  position: relative;
+  z-index: 2;
+}
+
+.showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  background: linear-gradient(160deg, rgba(61, 36, 23, 0.65), rgba(20, 16, 13, 0.96));
+  border: 1px solid rgba(200, 150, 62, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.classBadge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: 2px;
+  background: rgba(11, 8, 7, 0.6);
+  margin-bottom: 0.8rem;
+}
+
+.className {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.classTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--c-gold-bright);
+  margin-bottom: 0.8rem;
+}
+
+.weaponRow {
+  font-size: 0.92rem;
+  color: var(--c-text-dim);
+  margin-bottom: 1rem;
+}
+
+.weaponRow strong {
+  color: var(--c-text);
+}
+
+.desc {
+  color: var(--c-text-dim);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.statsWrap {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statLabelRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-text-dim);
+}
+
+.statTrack {
+  height: 6px;
+  background: rgba(11, 8, 7, 0.8);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 150, 62, 0.15);
+}
+
+.statFill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skillsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skillsHeading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--c-gold-bright);
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(200, 150, 62, 0.25);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.skillsGrid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.skillCard {
+  padding: 1.1rem;
+  background: rgba(11, 8, 7, 0.7);
+  border: 1px solid rgba(200, 150, 62, 0.2);
+  border-radius: 2px;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.skillCard:hover {
+  border-color: rgba(240, 196, 106, 0.5);
+  background: rgba(20, 16, 13, 0.9);
+}
+
+.skillTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.skillName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.skillType {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid;
+  border-radius: 2px;
+  background: rgba(11, 8, 7, 0.6);
+}
+
+.skillText {
+  color: var(--c-text-dim);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .showcase {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,8 @@
+.head {
+  padding: calc(var(--nav-h) + 3.5rem) 0 2.5rem;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 0%, var(--c-brown), var(--c-void) 75%);
+}
+.title { display: inline-block; font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900; letter-spacing: 0.06em; }
+.rule { display: block; height: 1px; width: min(320px, 60%); margin: 1.1rem auto 0; background: var(--line-gold); box-shadow: 0 0 14px var(--c-gold); transform-origin: center; }
+.sub { max-width: 56ch; margin: 1.1rem auto 0; color: var(--c-text-dim); }
