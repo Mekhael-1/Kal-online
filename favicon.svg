@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="favGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0c46a" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#e0702a" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#c8963e" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2c6" />
+      <stop offset="35%" stop-color="#f0c46a" />
+      <stop offset="70%" stop-color="#c8963e" />
+      <stop offset="100%" stop-color="#7a5015" />
+    </linearGradient>
+    <linearGradient id="favBlade" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#f0c46a" />
+      <stop offset="100%" stop-color="#e0702a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle cx="32" cy="32" r="30" fill="url(#favGlow)" />
+
+  <!-- Outer Shield Badge -->
+  <path d="M32 4 L56 16 V38 C56 50 32 60 32 60 C32 60 8 50 8 38 V16 Z"
+        fill="#14100d" stroke="url(#favGold)" stroke-width="2.5" stroke-linejoin="round" />
+
+  <!-- Inner Inscribed Shield -->
+  <path d="M32 10 L50 20 V36 C50 45 32 53 32 53 C32 53 14 45 14 36 V20 Z"
+        fill="#2a1810" stroke="rgba(200, 150, 62, 0.4)" stroke-width="1.2" />
+
+  <!-- Kal Sword / Crest -->
+  <path d="M32 12 V46" stroke="url(#favBlade)" stroke-width="2.8" stroke-linecap="round" />
+  <path d="M22 22 L32 29 L42 22" stroke="url(#favGold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="32" cy="29" r="3.5" fill="#e0702a" stroke="#fff2c6" stroke-width="1.2" />
+
+  <!-- Ember Sparks -->
+  <circle cx="23" cy="38" r="1.5" fill="#f0c46a" />
+  <circle cx="41" cy="38" r="1.5" fill="#f0c46a" />
+  <circle cx="32" cy="49" r="1.8" fill="#f0c46a" />
+</svg>
+
