@@ -24,21 +24,21 @@ interface GalleryCard {
 const galleryData: GalleryCard[] = [
   {
     id: 'siege',
-    src: '/kal 1.jpg',
+    src: 'kal 1.jpg',
     title: 'Ashen Keep Siege',
     category: 'Guild Warfare',
     description: 'Catapult barrages, battering rams, and massive 100v100 guild territorial warfare fighting for citadel taxes.',
   },
   {
     id: 'boss',
-    src: '/kal 2.jpg',
+    src: 'kal 2.jpg',
     title: 'Gravemaw World Raid',
     category: 'World Bosses',
     description: 'Server-wide midnight gatherings combating colossal mythical beasts for legendary equipment chests.',
   },
   {
     id: 'pvp',
-    src: '/kal 3.jpg',
+    src: 'kal 3.jpg',
     title: 'Contested Zone Skirmishes',
     category: 'Open PvP',
     description: 'Flag up in neutral wilderness for bonus honor rewards and lethal high-stakes rival champion duels.',
@@ -92,7 +92,7 @@ export default function Home() {
         <motion.div className={styles.videoWrap} style={{ y: videoY }}>
           <video 
             className={`${styles.videoBg} ${videoLoaded ? styles.videoOn : ''}`}
-            src="/media/video.mp4"
+            src="video.mp4"
             autoPlay
             muted
             loop
@@ -215,7 +215,7 @@ export default function Home() {
 
               <video
                 className={styles.castleWarVideo}
-                src="/video.mp4"
+                src="video.mp4"
                 autoPlay
                 loop
                 muted

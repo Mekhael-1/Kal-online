@@ -3,7 +3,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-h);
-  cursor: url('/cursor.svg') 4 3, auto;
+  cursor: url('cursor.svg') 4 3, auto;
 }
 
 body {
@@ -15,12 +15,12 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  cursor: url('/cursor.svg') 4 3, auto;
+  cursor: url('cursor.svg') 4 3, auto;
 }
 
 /* Custom MMORPG Pointer Cursor for interactive elements */
 a, button, [role="button"], input[type="submit"], input[type="button"], select, .pointer {
-  cursor: url('/cursor-pointer.svg') 4 3, pointer !important;
+  cursor: url('cursor-pointer.svg') 4 3, pointer !important;
 }
 
 input, textarea {

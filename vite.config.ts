@@ -10,8 +10,11 @@ export default defineConfig(({ mode }) => {
     base: './',
     server: {
       port: 5173,
-      // Only proxy to the backend when you explicitly turn it on
       proxy: useApi ? { '/api': env.VITE_API_TARGET || 'http://localhost:4000' } : undefined,
+    },
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
     },
   };
 });
