@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
-    base: './',
+    base: '/Kal-online/',
     server: {
       port: 5173,
       proxy: useApi ? { '/api': env.VITE_API_TARGET || 'http://localhost:4000' } : undefined,
